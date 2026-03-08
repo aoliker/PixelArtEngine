@@ -92,15 +92,17 @@ call "%COMFYUI_DIR%\venv\Scripts\activate.bat"
 
 pip install --upgrade pip
 
-REM Install PyTorch with CUDA 12.1 support (compatible with RTX 3070)
-echo   Installing PyTorch with CUDA support...
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
-
-REM Install ComfyUI requirements
+REM Install ComfyUI requirements first (may pull CPU-only torch)
 pip install -r "%COMFYUI_DIR%\requirements.txt"
 
+REM Install PyTorch with CUDA 12.1 support AFTER requirements.txt
+REM (requirements.txt can overwrite torch with a CPU-only build)
+echo   Installing PyTorch with CUDA support...
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121 --force-reinstall
+
 REM Verify CUDA availability
-python -c "import torch; print(f'  PyTorch {torch.__version__}'); print(f'  CUDA available: {torch.cuda.is_available()}'); print(f'  GPU: {torch.cuda.get_device_name(0)}') if torch.cuda.is_available() else print('  WARNING: CUDA not available')"
+python -c "import torch; cuda_ok = torch.cuda.is_available(); print(f'  PyTorch {torch.__version__}'); print(f'  CUDA available: {cuda_ok}');" ^& if not cuda_ok (echo   ERROR: CUDA still not available after install. Check NVIDIA drivers. & exit /b 1)
+python -c "import torch; print(f'  GPU: {torch.cuda.get_device_name(0)}')" 2>nul
 
 REM -------------------------------------------------------------------
 REM 4. Download SDXL base model

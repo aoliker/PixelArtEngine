@@ -6,7 +6,7 @@ Generate 32×32 dark fantasy pixel art tiles for ScarForge using Stable Diffusio
 
 ### Windows (NVIDIA GPU)
 - **NVIDIA GPU with 8GB+ VRAM** (e.g., RTX 3070) — uses CUDA backend
-- **Python 3.10+**
+- **Python 3.10–3.12** (3.13+ not yet supported by PyTorch CUDA builds)
 - **NVIDIA drivers + CUDA toolkit** installed
 - **~10 GB disk space** (SDXL model is ~6.9 GB)
 

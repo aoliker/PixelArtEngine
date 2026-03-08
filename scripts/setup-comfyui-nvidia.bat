@@ -42,6 +42,12 @@ if %PY_MAJOR% EQU 3 if %PY_MINOR% LSS 10 (
     echo ERROR: Python 3.10+ required. Found: %PY_VERSION%
     exit /b 1
 )
+if %PY_MAJOR% EQU 3 if %PY_MINOR% GEQ 13 (
+    echo ERROR: Python 3.13+ is not yet supported by PyTorch CUDA builds.
+    echo Install Python 3.11 or 3.12 from https://www.python.org/downloads/
+    echo Then run: py -3.11 -m venv "%COMFYUI_DIR%\venv"
+    exit /b 1
+)
 echo   Python %PY_VERSION% OK
 
 REM Check for git

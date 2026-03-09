@@ -129,15 +129,15 @@ WORKFLOW_API = {
 }
 
 
-def build_prompt(positive: str, negative: str, asset_name: str, seed: int = 42) -> dict:
+def build_prompt(positive: str, negative: str, asset_name: str, category: str, seed: int = 42) -> dict:
     """Build a complete API prompt payload for one asset."""
     workflow = json.loads(json.dumps(WORKFLOW_API))
     workflow["3"]["inputs"]["text"] = positive
     workflow["4"]["inputs"]["text"] = negative
     workflow["6"]["inputs"]["seed"] = seed
-    workflow["10"]["inputs"]["filename_prefix"] = f"ScarForge/full/{asset_name}"
-    workflow["11"]["inputs"]["filename_prefix"] = f"ScarForge/tiles/{asset_name}"
-    workflow["12"]["inputs"]["filename_prefix"] = f"ScarForge/preview/{asset_name}"
+    workflow["10"]["inputs"]["filename_prefix"] = f"ScarForge/full/{category}/{asset_name}"
+    workflow["11"]["inputs"]["filename_prefix"] = f"ScarForge/tiles/{category}/{asset_name}"
+    workflow["12"]["inputs"]["filename_prefix"] = f"ScarForge/preview/{category}/{asset_name}"
     return {"prompt": workflow}
 
 
@@ -162,8 +162,8 @@ def load_batch_file(path: Path) -> tuple[dict, str]:
 
 def main():
     parser = argparse.ArgumentParser(description="Queue ScarForge assets to ComfyUI")
-    parser.add_argument("batches", nargs="*", default=["tiles", "buildings", "props"],
-                        help="Which batch files to process: tiles, buildings, props (default: all)")
+    parser.add_argument("batches", nargs="*", default=["tiles", "buildings", "props", "characters"],
+                        help="Which batch files to process: tiles, buildings, props, characters (default: all)")
     parser.add_argument("--host", default=COMFYUI_DEFAULT,
                         help=f"ComfyUI server URL (default: {COMFYUI_DEFAULT})")
     parser.add_argument("--seed", type=int, default=42,
@@ -187,12 +187,13 @@ def main():
             sys.exit(1)
         batch_files.append(path)
 
-    # Collect all assets
+    # Collect all assets with their category (derived from batch filename)
     assets = []
     for path in batch_files:
+        category = path.stem.replace("scarforge-batch-", "")
         prompts, negative = load_batch_file(path)
         for asset_name, positive in prompts.items():
-            assets.append((asset_name, positive, negative))
+            assets.append((asset_name, positive, negative, category))
 
     print(f"ScarForge Batch Generator")
     print(f"  Server:  {args.host}")
@@ -201,9 +202,9 @@ def main():
     print()
 
     # Queue each asset
-    for i, (asset_name, positive, negative) in enumerate(assets):
+    for i, (asset_name, positive, negative, category) in enumerate(assets):
         seed = args.seed + i
-        payload = build_prompt(positive, negative, asset_name, seed)
+        payload = build_prompt(positive, negative, asset_name, category, seed)
 
         if args.dry_run:
             print(f"  [{i+1:3d}/{len(assets)}] {asset_name} (seed {seed}) — DRY RUN")
@@ -226,10 +227,11 @@ def main():
         print(f"Dry run complete. {len(assets)} assets would be queued.")
     else:
         print(f"All {len(assets)} assets queued. Check ComfyUI queue for progress.")
-        print(f"Output folders:")
-        print(f"  32x32 tiles:  ComfyUI/output/ScarForge/tiles/")
-        print(f"  Full res:     ComfyUI/output/ScarForge/full/")
-        print(f"  256x256 prev: ComfyUI/output/ScarForge/preview/")
+        categories = sorted(set(cat for _, _, _, cat in assets))
+        print(f"Output folders (per category: {', '.join(categories)}):")
+        print(f"  32x32 tiles:  ComfyUI/output/ScarForge/tiles/<category>/")
+        print(f"  Full res:     ComfyUI/output/ScarForge/full/<category>/")
+        print(f"  256x256 prev: ComfyUI/output/ScarForge/preview/<category>/")
 
 
 if __name__ == "__main__":

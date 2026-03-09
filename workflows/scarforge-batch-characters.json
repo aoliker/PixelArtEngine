@@ -1,0 +1,39 @@
+{
+  "_comment": "ScarForge — Character Prompts. 32x32 top-down character sprites for a dark fantasy RPG. Name outputs with char_ prefix for auto-sort into Assets/Sprites/Characters/.",
+  "_naming": "Save as: char_knight, char_mage, etc.",
+  "prompts": {
+    "char_knight": "pixel, pixel art, top-down 3/4 view, dark fantasy knight character, heavy plate armor, great helm with visor, sword and kite shield, dark steel armor with battle damage, tattered cape, muted steel and dark red palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "char_mage": "pixel, pixel art, top-down 3/4 view, dark fantasy mage character, hooded dark robes, glowing staff with crystal, arcane runes on robe, old weathered face, muted purple and dark blue palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "char_rogue": "pixel, pixel art, top-down 3/4 view, dark fantasy rogue character, leather armor, hooded cloak, twin daggers, belt pouches, shadowy figure, muted dark brown and black palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "char_archer": "pixel, pixel art, top-down 3/4 view, dark fantasy ranger archer character, leather armor with fur trim, longbow and quiver of arrows, forest cloak, muted green and brown palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "char_cleric": "pixel, pixel art, top-down 3/4 view, dark fantasy cleric character, chainmail under white-gray robes, holy symbol pendant, mace in hand, solemn expression, muted silver and off-white palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "char_barbarian": "pixel, pixel art, top-down 3/4 view, dark fantasy barbarian character, bare chest with war paint, fur loincloth and boots, large battle axe, scarred muscular body, muted brown and red palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "char_necromancer": "pixel, pixel art, top-down 3/4 view, dark fantasy necromancer character, tattered black robes, skull staff, glowing green eyes, skeletal hands visible, dark aura, muted black and sickly green palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "char_paladin": "pixel, pixel art, top-down 3/4 view, dark fantasy paladin character, ornate plate armor with holy engravings, glowing blessed sword, heavy shield with emblem, worn tabard, muted gold and steel palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "char_blacksmith": "pixel, pixel art, top-down 3/4 view, dark fantasy blacksmith NPC, leather apron, bare muscular arms, holding hammer, soot-stained face, muted brown and dark orange palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "char_merchant": "pixel, pixel art, top-down 3/4 view, dark fantasy merchant NPC, traveling robes and wide hat, belt with coin pouches, holding scales, shrewd expression, muted brown and gold palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "char_innkeeper": "pixel, pixel art, top-down 3/4 view, dark fantasy innkeeper NPC, portly figure, stained apron, holding tankard and cloth, friendly but tired expression, muted brown and cream palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "char_guard": "pixel, pixel art, top-down 3/4 view, dark fantasy town guard character, chain mail and tabard, spear and round shield, iron helm, standing at attention, muted steel and dark blue palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "char_skeleton": "pixel, pixel art, top-down 3/4 view, dark fantasy skeleton enemy, animated bones, rusted sword and broken shield, glowing eye sockets, tattered remains of clothing, muted bone-white and rust palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "char_zombie": "pixel, pixel art, top-down 3/4 view, dark fantasy zombie enemy, rotting flesh, torn clothing, shambling pose, exposed bones, glowing eyes, muted gray-green and dark brown palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "char_goblin": "pixel, pixel art, top-down 3/4 view, dark fantasy goblin enemy, small hunched green creature, crude wooden club, ragged loincloth, sharp teeth, pointy ears, muted green and brown palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "char_orc": "pixel, pixel art, top-down 3/4 view, dark fantasy orc warrior enemy, large muscular green-gray skin, tusked jaw, heavy crude iron armor, massive cleaver weapon, muted dark green and iron palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "char_demon": "pixel, pixel art, top-down 3/4 view, dark fantasy demon enemy, red-black skin, horns curving back, clawed hands, tail, glowing orange eyes, dark flames, muted crimson and black palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "char_wraith": "pixel, pixel art, top-down 3/4 view, dark fantasy wraith enemy, floating ghostly figure, tattered spectral robes, no visible face under hood, wispy translucent edges, muted dark blue and pale white palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "char_vampire": "pixel, pixel art, top-down 3/4 view, dark fantasy vampire lord enemy, pale skin, aristocratic dark clothing, high collar cape, red eyes, fangs visible, elegant menacing pose, muted dark red and black palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "char_witch": "pixel, pixel art, top-down 3/4 view, dark fantasy witch character, ragged dark robes, pointed hat, gnarled wooden staff, potions on belt, hunched posture, muted dark purple and green palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background"
+  },
+  "negative": "blurry, smooth gradients, anti-aliasing, 3d render, realistic, photographic, modern, futuristic, sci-fi, bright saturated colors, neon, watermark, text, signature, jpeg artifacts, low quality, deformed, ugly, oversaturated, bloom, glow effects, white background, cute, cartoonish",
+  "settings": {
+    "model": "sd_xl_base_1.0.safetensors",
+    "lora": "pixel-art-xl.safetensors",
+    "lora_strength": 0.85,
+    "steps": 30,
+    "cfg": 7.5,
+    "sampler": "euler_ancestral",
+    "scheduler": "normal",
+    "width": 1024,
+    "height": 1024,
+    "tile_size": 32
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "_comment": "ScarForge — Prop & Furniture Prompts. 32x32 top-down props for building interiors and town decoration. Name outputs with prop_ prefix for auto-sort into Assets/Sprites/Props/.",
+  "_naming": "Save as: prop_barrel, prop_crate, etc.",
+  "prompts": {
+    "prop_barrel": "pixel, pixel art, top-down 3/4 view, dark fantasy wooden barrel, iron bands, weathered oak, sitting on stone floor, dark shadow underneath, muted brown and steel palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "prop_crate": "pixel, pixel art, top-down 3/4 view, dark fantasy wooden crate, nailed shut, rough timber planks, rope handle, sitting on stone floor, muted brown palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "prop_bookshelf": "pixel, pixel art, front-facing view, dark fantasy tall wooden bookshelf, filled with old leather-bound books and scrolls, dark wood frame, dusty, muted brown and dark red palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "prop_table": "pixel, pixel art, top-down 3/4 view, dark fantasy wooden table, rough hewn timber, simple sturdy design, dark wood, muted brown palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "prop_chair": "pixel, pixel art, top-down 3/4 view, dark fantasy wooden chair, simple design, dark timber, slightly worn, muted brown palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "prop_anvil": "pixel, pixel art, top-down 3/4 view, dark fantasy blacksmith anvil on stump, heavy dark iron, hammer resting beside it, forge glow reflection, muted steel and brown palette, orange accent, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "prop_bed": "pixel, pixel art, top-down 3/4 view, dark fantasy simple bed, wooden frame with straw mattress and thin blanket, dark timber, muted brown and cloth-blue palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "prop_fireplace": "pixel, pixel art, front-facing view, dark fantasy stone fireplace with low burning fire, stone mantel, warm orange glow, dark stone surround, muted gray palette with warm orange accent, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "prop_torch_wall": "pixel, pixel art, front-facing view, dark fantasy wall-mounted torch, iron sconce bracket, burning flame with warm orange glow, mounted on stone wall, muted steel palette with orange fire accent, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "prop_lamp_post": "pixel, pixel art, top-down 3/4 view, dark fantasy iron lamp post, tall thin iron pole, hanging lantern with warm dim glow, cobblestone base, muted steel palette with warm yellow accent, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "prop_sign_hanging": "pixel, pixel art, front-facing view, dark fantasy hanging wooden tavern sign, iron bracket on wall, weathered painted wood, chain suspension, muted brown palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "prop_fountain": "pixel, pixel art, top-down view, dark fantasy stone fountain, circular basin, water surface with subtle ripples, mossy stone, central pillar, muted gray-green and dark blue palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "prop_tree_dead": "pixel, pixel art, top-down 3/4 view, dark fantasy dead tree, gnarled bare branches, twisted dark trunk, no leaves, ominous silhouette, muted dark brown palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "prop_tree_dark": "pixel, pixel art, top-down 3/4 view, dark fantasy dark pine tree, dense dark green-black foliage, thick trunk, casting deep shadow, muted dark green-brown palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "prop_rock_large": "pixel, pixel art, top-down 3/4 view, dark fantasy large boulder, rough gray stone, moss patches, dark shadow underneath, muted gray-green palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "prop_rock_small": "pixel, pixel art, top-down 3/4 view, dark fantasy small rocks cluster, three scattered gray stones, moss, sitting on ground, muted gray palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "prop_fence_wood": "pixel, pixel art, front-facing view, dark fantasy wooden fence section, weathered posts and rails, some boards broken, muted brown palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "prop_fence_iron": "pixel, pixel art, front-facing view, dark fantasy iron fence section, pointed iron bars, rust spots, dark metal, muted steel-brown palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "prop_well": "pixel, pixel art, top-down 3/4 view, dark fantasy stone well, circular stone wall, wooden bucket and rope on winch, mossy stones, dark water below, muted gray and brown palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "prop_cart": "pixel, pixel art, top-down 3/4 view, dark fantasy wooden cart, two wheels, open cargo bed, weathered timber, muted brown palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "prop_weapon_rack": "pixel, pixel art, front-facing view, dark fantasy wall weapon rack, wooden frame holding swords and spears, iron hooks, dark timber wall mount, muted brown and steel palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "prop_potion_shelf": "pixel, pixel art, front-facing view, dark fantasy potion shelf, wooden shelf with glass bottles in various colors, herbs hanging above, dark wood, muted brown palette with subtle color accents, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "prop_hay_pile": "pixel, pixel art, top-down 3/4 view, dark fantasy hay pile, straw bale and loose hay, pitchfork leaning against it, muted straw-yellow and brown palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background"
+  },
+  "negative": "blurry, smooth gradients, anti-aliasing, 3d render, realistic, photographic, modern, futuristic, sci-fi, bright saturated colors, neon, watermark, text, signature, jpeg artifacts, low quality, deformed, ugly, oversaturated, bloom, glow effects, white background, cute, cartoonish",
+  "settings": {
+    "model": "sd_xl_base_1.0.safetensors",
+    "lora": "pixel-art-xl.safetensors",
+    "lora_strength": 0.85,
+    "steps": 30,
+    "cfg": 7.5,
+    "sampler": "euler_ancestral",
+    "scheduler": "normal",
+    "width": 1024,
+    "height": 1024,
+    "tile_size": 32
+  }
+}

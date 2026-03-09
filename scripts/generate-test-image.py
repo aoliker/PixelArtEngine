@@ -44,7 +44,7 @@ WORKFLOW_PROMPT = {
                 "pixel, pixel art, top-down view, dark fantasy medieval village building, "
                 "stone and timber tavern, mossy roof, warm lantern light from windows, "
                 "cobblestone path, gritty atmosphere, muted dark palette, 32x32 tile sprite, "
-                "game asset, isometric pixel art, detailed shading, no anti-aliasing, clean pixel edges"
+                "game asset, detailed shading, clean pixel edges"
             ),
             "clip": ["2", 1]
         }

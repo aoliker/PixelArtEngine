@@ -45,7 +45,7 @@
       "properties": {},
       "title": "Positive Prompt",
       "widgets_values": [
-        "pixel, pixel art, top-down view, dark fantasy medieval village building, stone and timber tavern, mossy roof, warm lantern light from windows, cobblestone path, gritty atmosphere, muted dark palette, 32x32 tile sprite, game asset, isometric pixel art, detailed shading, no anti-aliasing, clean pixel edges"
+        "pixel, pixel art, top-down view, dark fantasy medieval village building, stone and timber tavern, mossy roof, warm lantern light from windows, cobblestone path, gritty atmosphere, muted dark palette, 32x32 tile sprite, game asset, detailed shading, clean pixel edges"
       ],
       "inputs": [
         {"name": "clip", "type": "CLIP", "link": 6}

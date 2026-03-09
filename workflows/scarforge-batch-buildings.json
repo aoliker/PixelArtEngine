@@ -1,0 +1,34 @@
+{
+  "_comment": "ScarForge — Building Tile Prompts. 32x32 top-down building footprint tiles for Montvale town. Each building is represented as a top-down rooftop/footprint tile that sits on the town grid. Name outputs with tile_ prefix.",
+  "_naming": "Save as: tile_building_tavern, tile_building_forge, etc.",
+  "_montvale_buildings": "14 buildings: Barracks, Town Hall, Jail, Chapel, Guild Hall, Residence A, Forge, Market, Clinic, Residence B, Inn, Residence C, Stables, plus The Maw dungeon entrance",
+  "prompts": {
+    "tile_building_barracks": "pixel, pixel art, top-down view, dark fantasy medieval barracks rooftop, slate gray roof tiles, weapon rack visible through window, stone and timber walls, muted gray-brown palette, dark value range, 32x32 tile sprite, game asset, clean pixel edges, no anti-aliasing",
+    "tile_building_townhall": "pixel, pixel art, top-down view, dark fantasy medieval town hall rooftop, peaked dark slate roof, larger building footprint, official banner, stone walls, muted gray palette with dark red accent, dark value range, 32x32 tile sprite, game asset, clean pixel edges, no anti-aliasing",
+    "tile_building_jail": "pixel, pixel art, top-down view, dark fantasy medieval jail rooftop, flat stone roof with iron bars on small windows, heavy stone construction, dark and oppressive, muted dark gray palette, 32x32 tile sprite, game asset, clean pixel edges, no anti-aliasing",
+    "tile_building_chapel": "pixel, pixel art, top-down view, dark fantasy medieval ruined chapel rooftop, cracked peaked roof with hole, crumbling stone walls, overgrown vines, eerie pale light, muted gray-green palette, 32x32 tile sprite, game asset, clean pixel edges, no anti-aliasing",
+    "tile_building_guildhall": "pixel, pixel art, top-down view, dark fantasy medieval guild hall rooftop, reinforced timber and stone, guild crest on roof, torches at entrance below, sturdy construction, muted brown and steel palette, 32x32 tile sprite, game asset, clean pixel edges, no anti-aliasing",
+    "tile_building_house_a": "pixel, pixel art, top-down view, dark fantasy medieval small house rooftop, thatched dark roof, simple timber and stone cottage, chimney with faint smoke, muted warm brown palette, dark value range, 32x32 tile sprite, game asset, clean pixel edges, no anti-aliasing",
+    "tile_building_forge": "pixel, pixel art, top-down view, dark fantasy medieval blacksmith forge rooftop, open-sided workshop roof, chimney with orange smoke glow, anvil shape visible below, dark stone and iron, muted dark palette with orange ember accent, 32x32 tile sprite, game asset, clean pixel edges, no anti-aliasing",
+    "tile_building_market": "pixel, pixel art, top-down view, dark fantasy medieval market stall rooftop, canvas and timber canopy, crates visible below edges, hanging goods, muted brown and tan palette, dark value range, 32x32 tile sprite, game asset, clean pixel edges, no anti-aliasing",
+    "tile_building_clinic": "pixel, pixel art, top-down view, dark fantasy medieval clinic rooftop, clean stone building, herb bundles drying on roof, mortar and pestle symbol, faint green-tinged light, muted gray-green palette, 32x32 tile sprite, game asset, clean pixel edges, no anti-aliasing",
+    "tile_building_house_b": "pixel, pixel art, top-down view, dark fantasy medieval house rooftop, wooden shingle roof, two-story timber frame visible, flower box at window, muted warm brown palette, dark value range, 32x32 tile sprite, game asset, clean pixel edges, no anti-aliasing",
+    "tile_building_inn": "pixel, pixel art, top-down view, dark fantasy medieval inn rooftop, large peaked roof with dormer windows, warm golden light from below, wooden sign, chimney with smoke, inviting but dark, muted brown palette with warm gold accent, 32x32 tile sprite, game asset, clean pixel edges, no anti-aliasing",
+    "tile_building_house_c": "pixel, pixel art, top-down view, dark fantasy medieval modest house rooftop, patched roof tiles, leaning chimney, worn timber walls, poorest district, muted dark brown palette, 32x32 tile sprite, game asset, clean pixel edges, no anti-aliasing",
+    "tile_building_stables": "pixel, pixel art, top-down view, dark fantasy medieval stables rooftop, long low building, hay visible through open sides, wooden fence corral, horse trough, muted brown and straw palette, dark value range, 32x32 tile sprite, game asset, clean pixel edges, no anti-aliasing",
+    "tile_maw_entrance": "pixel, pixel art, top-down view, dark fantasy dungeon entrance called The Maw, gaping stone mouth carved into rock, descending stairs into pure darkness, skull carvings on archway, flickering dim torches, ominous orange-red glow from below, cracked stone surround, muted gray palette with deep red accent, 32x32 tile sprite, game asset, clean pixel edges, no anti-aliasing"
+  },
+  "negative": "blurry, smooth gradients, anti-aliasing, 3d render, realistic, photographic, modern, futuristic, sci-fi, bright saturated colors, neon, watermark, text, signature, jpeg artifacts, low quality, deformed, ugly, oversaturated, bloom, glow effects, white background, isolated object, cute, cartoonish",
+  "settings": {
+    "model": "sd_xl_base_1.0.safetensors",
+    "lora": "pixel-art-xl.safetensors",
+    "lora_strength": 0.85,
+    "steps": 30,
+    "cfg": 7.5,
+    "sampler": "euler_ancestral",
+    "scheduler": "normal",
+    "width": 1024,
+    "height": 1024,
+    "tile_size": 32
+  }
+}

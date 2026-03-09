@@ -5,11 +5,12 @@
 // Automatically configures any PNG imported under Assets/Sprites/ with:
 //   - Filter Mode: Point (no filter)
 //   - Compression: None
-//   - Pixels Per Unit: 32
+//   - Pixels Per Unit: 32 for tiles/characters, 16 for icons
 //   - Sprite Mode: Single
 //   - Read/Write: Enabled (for tilemap slicing if needed)
+//   - Pivot: Bottom-center for characters, Center for tiles/icons
 //
-// Also creates a Tile asset alongside each imported sprite.
+// Also creates a Tile asset for tile_ prefixed sprites.
 // ============================================================================
 using UnityEditor;
 using UnityEngine;
@@ -17,7 +18,10 @@ using UnityEngine;
 public class PixelArtImporter : AssetPostprocessor
 {
     private const string SpritesFolder = "Assets/Sprites/";
-    private const int PixelsPerUnit = 32;
+
+    // PPU per style guide: 32 for tiles/characters, 16 for icons
+    private const int TilePPU = 32;
+    private const int IconPPU = 16;
 
     private void OnPreprocessTexture()
     {
@@ -27,10 +31,24 @@ public class PixelArtImporter : AssetPostprocessor
             return;
 
         TextureImporter importer = (TextureImporter)assetImporter;
+        string filename = System.IO.Path.GetFileNameWithoutExtension(assetPath).ToLowerInvariant();
+
+        // Determine PPU and pivot based on asset type (by filename prefix or folder)
+        bool isIcon = filename.StartsWith("icon_") || filename.StartsWith("item_")
+            || assetPath.Contains("/Icons/") || assetPath.Contains("/Items/");
+        bool isCharacter = filename.StartsWith("char_") || filename.StartsWith("npc_")
+            || filename.StartsWith("enemy_") || filename.StartsWith("player_")
+            || assetPath.Contains("/Characters/") || assetPath.Contains("/Enemies/");
+
+        int ppu = isIcon ? IconPPU : TilePPU;
+
+        // Pivot: bottom-center (0.5, 0) for characters, center (0.5, 0.5) for tiles/icons
+        Vector2 pivot = isCharacter ? new Vector2(0.5f, 0f) : new Vector2(0.5f, 0.5f);
 
         importer.textureType = TextureImporterType.Sprite;
         importer.spriteImportMode = SpriteImportMode.Single;
-        importer.spritePixelsPerUnit = PixelsPerUnit;
+        importer.spritePixelsPerUnit = ppu;
+        importer.spritePivot = pivot;
         importer.filterMode = FilterMode.Point;
         importer.textureCompression = TextureImporterCompression.Uncompressed;
         importer.isReadable = true;
@@ -44,7 +62,8 @@ public class PixelArtImporter : AssetPostprocessor
         platformSettings.textureCompression = TextureImporterCompression.Uncompressed;
         importer.SetPlatformTextureSettings(platformSettings);
 
-        Debug.Log($"[PixelArtImporter] Configured: {assetPath} (Point filter, no compression, PPU {PixelsPerUnit})");
+        string type = isIcon ? "icon" : isCharacter ? "character" : "tile";
+        Debug.Log($"[PixelArtImporter] Configured: {assetPath} ({type}, Point filter, no compression, PPU {ppu})");
     }
 
     private static void OnPostprocessAllAssets(
@@ -60,7 +79,10 @@ public class PixelArtImporter : AssetPostprocessor
             if (!assetPath.EndsWith(".png", System.StringComparison.OrdinalIgnoreCase))
                 continue;
 
-            CreateTileAsset(assetPath);
+            // Only create Tile assets for tile-prefixed sprites
+            string fname = System.IO.Path.GetFileNameWithoutExtension(assetPath).ToLowerInvariant();
+            if (fname.StartsWith("tile_") || assetPath.Contains("/Tiles/"))
+                CreateTileAsset(assetPath);
         }
     }
 

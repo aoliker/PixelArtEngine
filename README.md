@@ -101,9 +101,11 @@ SDXL Base → LoRA (pixel-art-xl, 0.85) → KSampler → VAE Decode
 
 All prompts start with the LoRA trigger word `pixel` and include style anchors for consistent output.
 
-See `workflows/scarforge-batch-tiles.json` for a full set of building prompts:
-- Tavern, Blacksmith, Chapel, Market Stall
-- Watchtower, Well, Graveyard, Dungeon Entrance
+See the batch workflow files for prompt sets:
+- `scarforge-batch-tiles.json` — Ground tiles (grass, stone, water, etc.)
+- `scarforge-batch-buildings.json` — Tavern, Blacksmith, Chapel, etc.
+- `scarforge-batch-props.json` — Barrels, crates, torches, etc.
+- `scarforge-batch-characters.json` — Knight, mage, rogue, NPCs, enemies
 
 ### Prompt Structure
 

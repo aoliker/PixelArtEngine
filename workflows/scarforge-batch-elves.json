@@ -1,0 +1,24 @@
+{
+  "_comment": "ScarForge — Elf Race Variations. 5 elf subtypes generated via cos-seed strategy for controlled variation. 32x32 top-down sprites.",
+  "_naming": "Save as: char_elf_high, char_elf_wood, etc.",
+  "prompts": {
+    "char_elf_high": "pixel, pixel art, top-down 3/4 view, dark fantasy high elf character, tall slender build, ornate silver and white robes, long platinum blonde hair, pointed ears, glowing blue eyes, elegant circlet, arcane aura, muted silver and pale blue palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "char_elf_wood": "pixel, pixel art, top-down 3/4 view, dark fantasy wood elf character, lean agile build, leather and bark armor, long brown hair braided with leaves, pointed ears, green eyes, longbow on back, forest camouflage cloak, muted green and brown palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "char_elf_dark": "pixel, pixel art, top-down 3/4 view, dark fantasy dark elf drow character, ashen gray skin, white hair pulled back, pointed ears, glowing red eyes, black leather armor with silver trim, dual curved blades, sinister elegance, muted dark purple and silver palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "char_elf_shadow": "pixel, pixel art, top-down 3/4 view, dark fantasy shadow elf assassin character, pale skin with dark tattoos, short cropped black hair, pointed ears, violet eyes, form-fitting dark cloth armor, hooded, twin shadow daggers, wispy dark aura, muted black and deep violet palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background",
+    "char_elf_ancient": "pixel, pixel art, top-down 3/4 view, dark fantasy ancient elf elder character, tall gaunt build, long flowing white robes with golden runes, very long silver hair, pointed ears, glowing amber eyes, gnarled elder staff with crystal, weathered ageless face, muted gold and ivory palette, 32x32 sprite, game asset, clean pixel edges, no anti-aliasing, dark background"
+  },
+  "negative": "blurry, smooth gradients, anti-aliasing, 3d render, realistic, photographic, modern, futuristic, sci-fi, bright saturated colors, neon, watermark, text, signature, jpeg artifacts, low quality, deformed, ugly, oversaturated, bloom, glow effects, white background, cute, cartoonish",
+  "settings": {
+    "model": "sd_xl_base_1.0.safetensors",
+    "lora": "pixel-art-xl.safetensors",
+    "lora_strength": 0.85,
+    "steps": 30,
+    "cfg": 7.5,
+    "sampler": "euler_ancestral",
+    "scheduler": "normal",
+    "width": 1024,
+    "height": 1024,
+    "tile_size": 32
+  }
+}
